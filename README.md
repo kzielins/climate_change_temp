@@ -8,26 +8,6 @@ Assumptions:
 
 
 # Usefull links  
-## Manage python packages Azure Databricks
-https://learn.microsoft.com/en-us/azure/databricks/libraries/notebooks-python-libraries
-
-### Install a library with %pip
-''' Python
-%pip install matplotlib
-'''
-
-### Install a library from a version control system with %pip
-''' Python
-%pip install git+https://github.com/databricks/databricks-cli
-'''
-
-
-### Save libraries in a requirements file
-''' Python
-%pip freeze > /dbfs/requirements.txt
-'''
-
-### Use a requirements file to install libraries
-''' Python
-%pip install -r /dbfs/requirements.txt
-'''
+## Python library development and build
+https://packaging.python.org/en/latest/tutorials/packaging-projects/
+py -m build
