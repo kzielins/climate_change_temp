@@ -6,10 +6,13 @@ Assumptions:
 - Tools: PySpark + Databricks (Community Edition) - package installed with PyPI, file to run package can be in notebook
 - Job parameters: input path and output path
 
-#Solution docs
- /test/databrick_scripts/
- V_climate_change_with_lib_short.dbc - non object lib version
- V_climate_change_with_lib_obj_short.dbc -  object lib version
+# Solution docs
+DIR: /test/databrick_scripts/
+File: V_climate_change_with_lib_short.dbc - non object lib version
+File: V_climate_change_with_lib_obj_short.dbc -  object lib version
+
+DIR: dist
+climate_change_temp-0.1.0-py3-none-any.whl - py whl package
 
 # Usefull links  
 ## Python library development and build
