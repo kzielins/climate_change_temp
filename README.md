@@ -8,6 +8,8 @@ Assumptions:
 
 # Solution documentation
 Python lib name "climate_change_temp"
+Data uploaded into 
+- dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv
 
 ## Source code
   Directory: src
@@ -21,17 +23,22 @@ Requirements :  PySpark + Databricks (Community Edition) Spark 3.0.1
 2. File: V_climate_change_with_lib_obj_short.dbc -  databrick with object lib version
 
 Example ussage :
-  from climate_change_temp.GlobalLandTemperaturesByState import *
-  source_csv_filename="dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv"
-  permanent_parquet_dir = "dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState_parquet"
-  maxtemp(spark,source_csv_filename,permanent_parquet_dir)
-
-## Install lib 
+``` Databrick_notebook V_climate_change_with_lib_short
+#import custom package
+from climate_change_temp.GlobalLandTemperaturesByState import *
+#source csv  https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data?resource=download (file: GlobalLandTemperaturesByState.csv) uploaded to dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/ 
+source_csv_filename="dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv"
+#destination parquet dir 
+permanent_parquet_dir = "dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState_parquet"
+#transpormation execution 
+maxtemp(spark,source_csv_filename,permanent_parquet_dir)
+```
+## Pytphon package  
   Directory: dist
+  Name: climate_change_temp
 1. climate_change_temp-0.1.0-py3-none-any.whl - py whl package
 
 
 
-# Usefull links  
-## Python library development and build
+## Python library build
    py -m build
