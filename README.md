@@ -18,7 +18,8 @@ Data uploaded into
 
 ## Databricks scripts 
 Requirements :  PySpark + Databricks (Community Edition) Spark 3.0.1
-  /test/databrick_scripts/
+
+Example databrick notebooks availble at: /test/databrick_scripts/
 1. File: V_climate_change_with_lib_short.dbc - databrick with non object lib version
 2. File: V_climate_change_with_lib_obj_short.dbc -  databrick with object lib version
 
@@ -33,6 +34,15 @@ permanent_parquet_dir = "dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/Glob
 #transpormation execution 
 maxtemp(spark,source_csv_filename,permanent_parquet_dir)
 ```
+
+## Tests 
+Simple Unittest /tests/GlobalLandTemperaturesByStateTests.py with 2 simple tests
+Non implemented potential addtional tests:
+- src csv file 
+- src csv structure validation
+- databricks directories validation
+- spark object validataion
+
 ## Pytphon package  
   Directory: dist
   Name: climate_change_temp
