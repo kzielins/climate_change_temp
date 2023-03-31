@@ -7,7 +7,7 @@ Assumptions:
 - Job parameters: input path and output path
 
 # Package documentation 
-- Python lib name "climate_change_temp" should be installed to Databrick Compute nodes
+- Python lib name "climate_change_temp" should be installed to Databrick Compute "(7.3 LTS (includes Apache Spark 3.0.1, Scala 2.12))" nodes
 - CSV https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data?resource=download (file: GlobalLandTemperaturesByState.csv) data should be uploaded into Databrick.
   - dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv
 - update databrick notebook variables  : source_csv_filename , permanent_parquet_dir
