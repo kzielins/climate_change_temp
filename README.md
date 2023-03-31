@@ -6,11 +6,12 @@ Assumptions:
 - Tools: PySpark + Databricks (Community Edition) - package installed with PyPI, file to run package can be in notebook
 - Job parameters: input path and output path
 
-# Solution documentation
-Python lib name "climate_change_temp"
-Data uploaded into 
-- dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv
-
+# Package documentation 
+- Python lib name "climate_change_temp" should be installed to Databrick Compute nodes
+- CSV https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data?resource=download (file: GlobalLandTemperaturesByState.csv) data should be uploaded into Databrick.
+  - dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv
+- update databrick notebook variables  : source_csv_filename , permanent_parquet_dir
+ 
 ## Source code
   Directory: src
 1. GlobalLandTemperaturesByState.py - 1st  non object version
