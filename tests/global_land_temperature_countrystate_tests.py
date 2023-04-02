@@ -45,7 +45,7 @@ class GlobalLandTemperaturesByCountryStateTests(unittest.TestCase):
         sparkDF=spark.createDataFrame(self.pDF)
         glT = GlobalLandTemperaturesByCountryState(spark)
         max_df=glT.calculate_max_temperature_dataframe(sparkDF)
-        # max_df.show()
+
         fdf=max_df.filter("State == 'NY'")
         pdf = fdf.toPandas()
         pd.testing.assert_frame_equal(pdf,self.pdNY)
