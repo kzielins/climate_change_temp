@@ -8,8 +8,8 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "climate_change_temp"
-version = "0.1.02"
+name = "climatechangetemperature"
+version = "0.1.03"
 authors = [
   { name="Krzysztof Zielinski", email="kzielinsk@gmail.com" },
 ]

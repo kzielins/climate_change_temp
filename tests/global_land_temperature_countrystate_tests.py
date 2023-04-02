@@ -1,6 +1,6 @@
 import unittest
 from pyspark.sql import SparkSession
-from climate_change_temp.global_land_temperature_countrystate import GlobalLandTemperaturesByCountryState
+from climatechangetemperature.global_land_temperature_countrystate import GlobalLandTemperaturesByCountryState
 
 import pandas as pd
 
@@ -44,7 +44,6 @@ class GlobalLandTemperaturesByCountryStateTests(unittest.TestCase):
 
         sparkDF=spark.createDataFrame(self.pDF)
         glT = GlobalLandTemperaturesByCountryState(spark)
-        glT.set_spark(spark)
         max_df=glT.calculate_max_temperature_dataframe(sparkDF)
         # max_df.show()
         fdf=max_df.filter("State == 'NY'")

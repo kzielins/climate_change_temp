@@ -4,7 +4,7 @@ import logging
 
 class GlobalLandTemperaturesByCountryState:
 
-    global_land_temperatyre_csv_schema = StructType([
+    __global_land_temperature_csv_schema = StructType([
         StructField("dt",                   StringType(), True),
         StructField("AverageTemperature",   DoubleType(),   True),
         StructField("AverageTemperatureUncertainty",     DoubleType(),  True),
@@ -16,7 +16,6 @@ class GlobalLandTemperaturesByCountryState:
 
     def __init__(self, spark):
         self._spark = spark
-
 
     def calculate_max_temperature(self, input_csv, output_parquet):
         """
@@ -84,11 +83,11 @@ class GlobalLandTemperaturesByCountryState:
                 raw_temperatures_df = self._spark.read.format("csv") \
                     .option("header", "true") \
                     .option("sep", ",") \
-                    .schema(self.global_land_temperatyre_csv_schema)\
+                    .schema(self.__global_land_temperature_csv_schema)\
                     .load(csv_filename)
-        except:
-            logging.error("Failed to read csv file:"+csv_filename)
-            raise Exception("Failed to read csv file:"+csv_filename)
+        except BaseException as e:
+            logging.error("Failed to read csv file:" + csv_filename + " {}".format(e))
+            raise Exception("Failed to read csv file:" + csv_filename + " {}".format(e))
         finally:
             return raw_temperatures_df
 
@@ -111,8 +110,8 @@ class GlobalLandTemperaturesByCountryState:
 
         try:
             max_temperatures_df.write.parquet(permanent_parquet_dir, mode='overwrite')
-        except:
-            logging.error("Failed to write Dataframe to "+permanent_parquet_dir)
-            raise Exception("Failed to write Dataframe to "+permanent_parquet_dir)
+        except BaseException as e:
+            logging.error("Failed to write Dataframe to " + permanent_parquet_dir + " {}".format(e))
+            raise Exception("Failed to write Dataframe to " + permanent_parquet_dir + " {}".format(e))
         finally:
             logging.info("Dataframe with results written successfully to "+permanent_parquet_dir)

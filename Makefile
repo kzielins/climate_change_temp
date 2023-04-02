@@ -5,4 +5,4 @@ build:
     py -m build
 
 test:
-    py.test tests
+    python global_land_temperature_countrystate_tests.py
