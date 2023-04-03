@@ -46,9 +46,16 @@ Non implemented potential addtional tests:
 ## Package build
 - Package name: climatechangetemperature
 - Directory: climate_change_temp/dist
-- File: climate_change_temp-0.1.5-py3-none-any.whl - py whl package
-- 
+- File: climate_change_temp-0.1.4-py3-none-any.whl - py whl package
 - Package build commands (execuded in dir climatechangetemperature/)
 ```
 py -m build
 ```
+
+## Required improvements
+- package namespace update
+- more tests for source csv file structure validation
+- more test with checking destination path 
+- documentation generation
+- makefile with build, test and doc section 
+- updated LICENCE file with company 
