@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "climatechangetemperature"
-version = "0.1.03"
+version = "0.1.04"
 authors = [
   { name="Krzysztof Zielinski", email="kzielinsk@gmail.com" },
 ]
