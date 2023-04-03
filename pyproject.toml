@@ -13,7 +13,8 @@ version = "0.1.04"
 authors = [
   { name="Krzysztof Zielinski", email="kzielinsk@gmail.com" },
 ]
-description = "Library read source temperatures for contry,state from CSV. Find the maximum temperature for a given country and state. Write the result in parquet format."
+description = "Library read source temperatures for contry,state from CSV. Find the \
+ maximum temperature for a given country and state. Write the result in parquet format."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
