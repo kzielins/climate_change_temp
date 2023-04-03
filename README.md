@@ -17,7 +17,7 @@ Directory: climate_change_temp/climatechangetemperature
 global_land_temperature_countrystate.py 
 
 ## Databricks scripts
-Requirements :  PySpark + Databricks (Community Edition) Spark 3.0.1
+Requirements :  PySpark + Databricks (Community Edition) Spark 3.0.1 , numpy>=1.21.6 , pandas>=1.3.5
 
 Example databrick notebooks availble at: climate_change_temp/test/databrick_scripts/
 File: V_climate_change_with_lib_obj_short.dbc -  databrick with object lib version
