@@ -7,7 +7,7 @@ import pandas as pd
 
 class GlobalLandTemperaturesByCountryStateTests(unittest.TestCase):
     #test data
-    data = [
+    DATA = [
             ['Poland','Warsaw', 15,1998],
             ['Poland','Warsaw', 16.7,2020],
             ['Germany','Bonn', 18,2001],
@@ -21,11 +21,11 @@ class GlobalLandTemperaturesByCountryStateTests(unittest.TestCase):
             ['US','NY',31,2010],
             ['US','NY',32.2,2020],
             ['US','NY',33,2022]]
-    pDF = pd.DataFrame(data, columns = ['Country', 'State','AverageTemperature','Year'])
+    pDF = pd.DataFrame(DATA, columns = ['Country', 'State','AverageTemperature','Year'])
 
     #expected results
-    NYdata= [['US','NY',33.0]]
-    pdNY=pd.DataFrame(NYdata,columns= ['Country','State','maxAvrgTemp'])
+    NY_DATA= [['US','NY',33.0]]
+    pdNY=pd.DataFrame(NY_DATA,columns= ['Country','State','maxAvrgTemp'])
 
     # test read Poland
     def test_df_Poland_1(self):
