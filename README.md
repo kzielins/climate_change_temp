@@ -6,54 +6,49 @@ Assumptions:
 - Tools: PySpark + Databricks (Community Edition) - package installed with PyPI, file to run package can be in notebook
 - Job parameters: input path and output path
 
- 
-# Package documentation 
- 
+# Package documentation
 - Python lib name "climate_change_temp" should be installed to Databrick Compute "(7.3 LTS (includes Apache Spark 3.0.1, Scala 2.12))" nodes
 - CSV https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data?resource=download (file: GlobalLandTemperaturesByState.csv) data should be uploaded into Databrick.
   - dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv
 - update databrick notebook variables  : source_csv_filename , permanent_parquet_dir
- 
- 
-## Source code
-  Directory: climate_change_temp/src
-1. GlobalLandTemperaturesByState.py - 1st  non object version
-2. GlobalLandTemperaturesByStateObj.py - 2nd obj version
 
-## Databricks scripts 
-Requirements :  PySpark + Databricks (Community Edition) Spark 3.0.1
+## Source code
+Directory: climate_change_temp/climatechangetemperature
+global_land_temperature_countrystate.py 
+
+## Databricks scripts
+Requirements :  PySpark + Databricks (Community Edition) Spark 3.0.1 , numpy>=1.21.6 , pandas>=1.3.5
 
 Example databrick notebooks availble at: climate_change_temp/test/databrick_scripts/
-1. File: V_climate_change_with_lib_short.dbc - databrick with non object lib version
-2. File: V_climate_change_with_lib_obj_short.dbc -  databrick with object lib version
+File: V_climate_change_with_lib_obj_short.dbc -  databrick with object lib version
 
 Example ussage :
 ``` Databrick_notebook V_climate_change_with_lib_short
 #import custom package
-from climate_change_temp.GlobalLandTemperaturesByState import *
+from climatechangetemperature import global_land_temperature_countrystate
 #source csv  https://www.kaggle.com/datasets/berkeleyearth/climate-change-earth-surface-temperature-data?resource=download (file: GlobalLandTemperaturesByState.csv) uploaded to example dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/ 
 source_csv_filename="dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState.csv"
 #destination parquet dir, should be updated
 permanent_parquet_dir = "dbfs:/FileStore/shared_uploads/krzychzet@gmail.com/GlobalLandTemperaturesByState_parquet"
 #csv to parquet transformation execution 
-maxtemp(spark,source_csv_filename,permanent_parquet_dir)
+glt = global_land_temperature_countrystate.GlobalLandTemperaturesByCountryState(spark)
+glt.calculate_max_temperature(source_csv_filename,permanent_parquet_dir)
 ```
 
- 
-## Tests 
+## Tests
 Simple Unittest climate_change_temp/tests/GlobalLandTemperaturesByStateTests.py with 2 simple tests
 Non implemented potential addtional tests:
-- src csv file 
+- src csv file
 - src csv structure validation
 - databricks directories validation
-- spark object validataion
 
- 
-## Buikd  package  
+
+## Package build
+- Package name: climatechangetemperature
 - Directory: climate_change_temp/dist
- - File: climate_change_temp-0.1.0-py3-none-any.whl - py whl package
-- Package name: climate_change_temp
-- Package build commands execuded in climate_change_temp/
+- File: climate_change_temp-0.1.5-py3-none-any.whl - py whl package
+- 
+- Package build commands (execuded in dir climatechangetemperature/)
 ```
 py -m build
 ```

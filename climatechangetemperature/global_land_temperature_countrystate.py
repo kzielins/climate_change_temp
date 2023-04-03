@@ -1,7 +1,12 @@
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
 import logging
 
-
+"""Library read source temperatures for contry,state from CSV. Find the maximum 
+   temperature for a given country and state. Write the result in parquet format.
+   @Author: Krzysztof Zielinski
+   @Date: 01.04.2023
+   @Links: github.com/kzielins/
+"""
 class GlobalLandTemperaturesByCountryState:
 
     __global_land_temperature_csv_schema = StructType([
